@@ -54,11 +54,11 @@ router.delete("/deleteproject/:id", deleteProjectById); //delete project by id
 router.put("/updateproject/:id", updateProjectById); //update the project by id
 
 //skills routes
-router.post("/addskill", addSkill); // Add a skill
+router.post("/addskills", addSkill); // Add a skill
 router.get("/getskills", getAllSkills); // Get all skills
-router.get("/getskillbyid/:id", getSkillById); // Get one skill by id
-router.delete("/deleteskill/:id", deleteSkillById); // Delete skill by id
-router.put("/updateskill/:id", updateSkillById); // Update the skill by id
+router.get("/getskillsbyid/:id", getSkillById); // Get one skill by id
+router.delete("/deleteskills/:id", deleteSkillById); // Delete skill by id
+router.put("/updateskills/:id", updateSkillById); // Update the skill by id
 
 //experience section
 router.post("/addexperience", addExperience); // Add an experience

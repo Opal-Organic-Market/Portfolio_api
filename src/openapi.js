@@ -34,7 +34,7 @@ app.listen(8080, () => {
     60 * 1000,
     "api-docs",
     modelNames,
-    ["users"],
+    ["users", "skills"],
     ["development"],
     true
   );
