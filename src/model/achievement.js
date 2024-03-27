@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const { Schema } = mongoose;
+const schema = mongoose.Schema;
 
-const achievementSchema = new Schema({
+const achievementSchema = new schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   image: { type: String, required: true }, // Path to the image file

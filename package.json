@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/servers/app.js",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "openapi": "nodemon src/openapi.js"
   },
   "keywords": [],
@@ -22,7 +23,7 @@
     "mongoose-to-swagger": "^1.5.1"
   },
   "devDependencies": {
-    "dev": "nodemon src/servers/app.js",
+   
     "nodemon": "^3.1.0"
   }
 }

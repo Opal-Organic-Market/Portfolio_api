@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const { Schema } = mongoose;
+const schema = mongoose.Schema;
 
-const experienceSchema = new Schema({
+const experienceSchema = new schema({
   title: { type: String, required: true },
   institution: { type: String, required: true },
   description: { type: String, required: true },
