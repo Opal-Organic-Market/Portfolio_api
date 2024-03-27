@@ -1,0 +1,587 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/addblog": {
+      "post": {
+        "summary": "/addblog",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/getblogs": {
+      "get": {
+        "summary": "/getblogs",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/getbyid/{id}": {
+      "get": {
+        "summary": "/getbyid/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/deleteblog/{id}": {
+      "delete": {
+        "summary": "/deleteblog/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/updateblog/{id}": {
+      "put": {
+        "summary": "/updateblog/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/addproject": {
+      "post": {
+        "summary": "/addproject",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/getprojects": {
+      "get": {
+        "summary": "/getprojects",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/getbyprojectid/{id}": {
+      "get": {
+        "summary": "/getbyprojectid/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/deleteproject/{id}": {
+      "delete": {
+        "summary": "/deleteproject/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/updateproject/{id}": {
+      "put": {
+        "summary": "/updateproject/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/addskills": {
+      "post": {
+        "summary": "/addskills",
+        "responses": {},
+        "tags": [
+          "skills"
+        ]
+      }
+    },
+    "/getskills": {
+      "get": {
+        "summary": "/getskills",
+        "responses": {},
+        "tags": [
+          "skills"
+        ]
+      }
+    },
+    "/getskillsbyid/{id}": {
+      "get": {
+        "summary": "/getskillsbyid/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": [
+          "skills"
+        ]
+      }
+    },
+    "/deleteskills/{id}": {
+      "delete": {
+        "summary": "/deleteskills/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": [
+          "skills"
+        ]
+      }
+    },
+    "/updateskills/{id}": {
+      "put": {
+        "summary": "/updateskills/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": [
+          "skills"
+        ]
+      }
+    },
+    "/addexperience": {
+      "post": {
+        "summary": "/addexperience",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/getexperiences": {
+      "get": {
+        "summary": "/getexperiences",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/getexperiencebyid/{id}": {
+      "get": {
+        "summary": "/getexperiencebyid/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/deleteexperience/{id}": {
+      "delete": {
+        "summary": "/deleteexperience/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/updateexperience/{id}": {
+      "put": {
+        "summary": "/updateexperience/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/addachievement": {
+      "post": {
+        "summary": "/addachievement",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "example": "adasdsad"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "asdasdasdas"
+                    },
+                    "image": {
+                      "type": "string",
+                      "example": "secure/uploads/9699"
+                    },
+                    "_id": {
+                      "type": "string",
+                      "example": "6604668f6125417eea001172"
+                    },
+                    "__v": {
+                      "type": "number",
+                      "example": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": []
+      }
+    },
+    "/getachievements": {
+      "get": {
+        "summary": "/getachievements",
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/getachievementbyid/{id}": {
+      "get": {
+        "summary": "/getachievementbyid/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/deleteachievement/{id}": {
+      "delete": {
+        "summary": "/deleteachievement/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    },
+    "/updateachievement/{id}": {
+      "put": {
+        "summary": "/updateachievement/{id}",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {},
+        "tags": []
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "users"
+    },
+    {
+      "name": "skills"
+    }
+  ],
+  "info": {
+    "title": "Portfolio API Documentation",
+    "description": "API Documentation for Portfolio website",
+    "version": ""
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000"
+    },
+    {
+      "url": "https://localhost:8000"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "About": {
+        "title": "About",
+        "required": [
+          "title",
+          "author",
+          "body"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "body": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": []
+            }
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "votes": {
+                "type": "number"
+              },
+              "favs": {
+                "type": "number"
+              }
+            }
+          },
+          "_id": {
+            "type": "string"
+          }
+        }
+      },
+      "Project": {
+        "title": "Project",
+        "required": [
+          "title",
+          "description",
+          "image",
+          "link"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "body": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              },
+              "required": []
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "votes": {
+                "type": "number"
+              },
+              "favs": {
+                "type": "number"
+              }
+            }
+          },
+          "_id": {
+            "type": "string"
+          }
+        }
+      },
+      "Skill": {
+        "title": "Skill",
+        "required": [
+          "name",
+          "proficiency",
+          "experience"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "proficiency": {
+            "type": "string"
+          },
+          "experience": {
+            "type": "string"
+          },
+          "_id": {
+            "type": "string"
+          }
+        }
+      },
+      "Experience": {
+        "title": "Experience",
+        "required": [
+          "title",
+          "institution",
+          "description",
+          "startDate"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "institution": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "_id": {
+            "type": "string"
+          }
+        }
+      },
+      "Achievement": {
+        "title": "Achievement",
+        "required": [
+          "title",
+          "description",
+          "image"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "_id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

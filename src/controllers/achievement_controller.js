@@ -4,7 +4,10 @@ import { Achievement } from "../model/achievement.js";
 export const addAchievement = async (req, res) => {
   try {
     const data = req.body;
-    const addedAchievement = await Achievement.create(data);
+    const addedAchievement = await Achievement.create({
+      ...data,
+      image: req.file.filename
+    });
     console.log("New achievement added:", addedAchievement);
     res.send(addedAchievement);
   } catch (error) {

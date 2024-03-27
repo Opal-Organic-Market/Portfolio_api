@@ -13,4 +13,4 @@ const addBlogSchema = new schema({
   },
 });
 
-export const blogModel = mongoose.model("About", addBlogSchema);
+export const blogModel = mongoose.model("Post", addBlogSchema);

@@ -1,5 +1,7 @@
 import { Router } from "express";
 import dotenv from "dotenv";
+import multer from "multer";
+import { MulterSaveFilesOrgStorage } from "multer-savefilesorg-storage";
 import {
   addBlog,
   getAll,
@@ -39,8 +41,23 @@ import {
 export const router = Router();
 
 dotenv.config();
+//config upload middleware for achievement
+const uploadAchievement = multer({
+  storage: MulterSaveFilesOrgStorage({
+    serverPath: `https://savefiles.org/api/v1/uploads`,
+    apiAccessToken: process.env.SAVEFILESORG_API_KEY,
+    relativePath: "/portfolio/images/achievements/*",
+  }),
+  preservePath: true,
+});
+
+//config upload middleware for blog
+
+//config upload middleware for experience
+
+
 //blog routes
-router.post("/addblog", addBlog); //add a blog
+router.post("/addblog", addBlog); //add a blog   //add multer to post images
 router.get("/getblogs", getAll); //get all blogs
 router.get("/getbyid/:id", getOne); //get a blog by id
 router.delete("/deleteblog/:id", deleteBlogById); //delete blog by id
@@ -61,14 +78,14 @@ router.delete("/deleteskills/:id", deleteSkillById); // Delete skill by id
 router.put("/updateskills/:id", updateSkillById); // Update the skill by id
 
 //experience section
-router.post("/addexperience", addExperience); // Add an experience
+router.post("/addexperience", addExperience); // Add an experience  //add multer to post images
 router.get("/getexperiences", getAllExperiences); // Get all experiences
 router.get("/getexperiencebyid/:id", getExperienceById); // Get one experience by id
 router.delete("/deleteexperience/:id", deleteExperienceById); // Delete experience by id
 router.put("/updateexperience/:id", updateExperienceById); // Update the experience by id
 
 //achievement section
-router.post("/addachievement", addAchievement); // Add an achievement
+router.post("/addachievement", uploadAchievement.single('image'), addAchievement); // Add an achievement
 router.get("/getachievements", getAllAchievements); // Get all achievements
 router.get("/getachievementbyid/:id", getAchievementById); // Get one achievement by id
 router.delete("/deleteachievement/:id", deleteAchievementById); // Delete achievement by id
