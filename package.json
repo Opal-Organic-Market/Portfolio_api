@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run prod & npm run swagger",
+    "start": "npm run prod",
     "prod": "node src/app.js ",
     "all": "npm run start & npm run openapi",
     "dev": "nodemon src/app.js",
