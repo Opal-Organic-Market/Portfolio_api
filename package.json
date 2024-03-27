@@ -6,9 +6,12 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js",
+    "start": "npm run prod & npm run swagger",
+    "prod": "node src/app.js ",
+    "all": "npm run start & npm run openapi",
     "dev": "nodemon src/app.js",
-    "openapi": "nodemon src/openapi.js"
+    "openapi": "nodemon src/openapi.js",
+    "swagger": "node src/openapi.js"
   },
   "keywords": [],
   "author": "",
