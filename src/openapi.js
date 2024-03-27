@@ -25,7 +25,7 @@ app.listen(8080, () => {
         title: "Portfolio API Documentation",
         description: "API Documentation for Portfolio website",
       };
-      spec.host = "https://portfolio-api-nmrs.onrender.com/";
+      spec.host = "portfolio-api-nmrs.onrender.com/";
       spec.schemes = ["http", "https"];
 
       return spec;
