@@ -5,7 +5,7 @@ const schema = mongoose.Schema;
 const experienceSchema = new schema({
   title: { type: String, required: true },
   institution: { type: String, required: true },
-  description: { type: String,},
+  description: { type: String},
   startDate: { type: Date, required: true },
   endDate: { type: Date },
 });

@@ -62,12 +62,12 @@ const uploadBlog = multer({
 });
 
 
-//config upload middleware for experience
-const uploadExperience = multer({
+//config upload middleware for project
+const uploadProject = multer({
   storage: MulterSaveFilesOrgStorage({
     serverPath: `https://savefiles.org/api/v1/uploads`,
     apiAccessToken: process.env.SAVEFILESORG_API_KEY,
-    relativePath: "/portfolio/images/experience/*",
+    relativePath: "/portfolio/images/project/*",
   }),
   preservePath: true,
 });
@@ -81,7 +81,7 @@ router.delete("/deleteblogs/:id", deleteBlogById); //delete blog by id
 router.put("/updateblogs/:id", updateBlogById); //update blog by id
 
 //project routes
-router.post("/addprojects", addProject); //add a project
+router.post("/addprojects", uploadProject.single('image'), addProject); //add a project
 router.get("/getprojects", getAllProjects); //get all projects
 router.get("/getbyprojectsid/:id", getAllProjectById); //get one project by id
 router.delete("/deleteprojects/:id", deleteProjectById); //delete project by id
@@ -95,7 +95,7 @@ router.delete("/deleteskills/:id", deleteSkillById); // Delete skill by id
 router.put("/updateskills/:id", updateSkillById); // Update the skill by id
 
 //experience section
-router.post("/addexperiences", uploadExperience.single('image'), addExperience); // Add an experience  //add multer to post images
+router.post("/addexperiences", addExperience); // Add an experience 
 router.get("/getexperiences", getAllExperiences); // Get all experiences
 router.get("/getexperiencesbyid/:id", getExperienceById); // Get one experience by id
 router.delete("/deleteexperiences/:id", deleteExperienceById); // Delete experience by id
