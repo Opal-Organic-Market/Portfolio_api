@@ -15,4 +15,4 @@ const addProjectSchema = new schema({
   },
 });
 
-export const projectModel = mongoose.model("Project", addProjectSchema);
+export const Project = mongoose.model("Project", addProjectSchema);

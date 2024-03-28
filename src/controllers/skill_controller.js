@@ -4,10 +4,7 @@ import { Skill } from "../model/skills.js";
 export const addSkill = async (req, res) => {
   try {
     const data = req.body;
-    const addedSkill = await Skill.create({
-      ...data,
-    image: req.file.filename
-    });
+    const addedSkill = await Skill.create(data);
     console.log("New skill added:", addedSkill);
     res.send(addedSkill);
   } catch (error) {
