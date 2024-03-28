@@ -3,7 +3,7 @@ import { projectModel } from "../model/projects.js";
 //post project
 export const addProject = async (req, res) => {
   try {
-    const addproject = await projectModel.create(req.body);
+    const addproject = await Project.create(req.body);
     res.status(201).send(addproject); // 201 status code for successful creation
   } catch (error) {
     console.log(error);
@@ -14,7 +14,7 @@ export const addProject = async (req, res) => {
 //get all project
 export const getAllProjects = async (req, res) => {
   try {
-    const getAll = await projectModel.find({});
+    const getAll = await Project.find({});
     res.status(201).send(getAll);
   } catch (error) {
     console.log(error);
@@ -26,7 +26,7 @@ export const getAllProjects = async (req, res) => {
 export const getAllProjectById = async (req, res) => {
   try {
     const id = req.params.id;
-    const getById = await projectModel.findById(id);
+    const getById = await Project.findById(id);
     res.status(201).send(getById);
   } catch (error) {
     console.log(error);
@@ -38,7 +38,7 @@ export const getAllProjectById = async (req, res) => {
 export const deleteProjectById = async (req, res) => {
   try {
     const id = req.params.id;
-    const deleteById = await projectModel.findByIdAndDelete(id);
+    const deleteById = await Project.findByIdAndDelete(id);
 
     if (!deleteById) {
       return res.status(404).json({ message: "Project not found" });
@@ -57,7 +57,7 @@ export const updateProjectById = async (req, res) => {
     const id = req.params.id;
     const updates = req.body;
 
-    const updated = await projectModel.findByIdAndUpdate(id, updates, {
+    const updated = await Project.findByIdAndUpdate(id, updates, {
       new: true,
     });
 

@@ -13,6 +13,8 @@ export const addExperience = async (req, res) => {
   }
 };
 
+
+
 // Get all experiences
 export const getAllExperiences = async (req, res) => {
   try {

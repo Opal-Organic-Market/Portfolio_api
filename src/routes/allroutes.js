@@ -52,23 +52,40 @@ const uploadAchievement = multer({
 });
 
 //config upload middleware for blog
+const uploadBlog = multer({
+  storage: MulterSaveFilesOrgStorage({
+    serverPath: `https://savefiles.org/api/v1/uploads`,
+    apiAccessToken: process.env.SAVEFILESORG_API_KEY,
+    relativePath: "/portfolio/images/blogs/*",
+  }),
+  preservePath: true,
+});
+
 
 //config upload middleware for experience
+const uploadExperience = multer({
+  storage: MulterSaveFilesOrgStorage({
+    serverPath: `https://savefiles.org/api/v1/uploads`,
+    apiAccessToken: process.env.SAVEFILESORG_API_KEY,
+    relativePath: "/portfolio/images/experience/*",
+  }),
+  preservePath: true,
+});
 
 
 //blog routes
-router.post("/addblog", addBlog); //add a blog   //add multer to post images
+router.post("/addblogs", uploadBlog.single('image') ,addBlog); //add a blog   //add multer to post images
 router.get("/getblogs", getAll); //get all blogs
-router.get("/getbyid/:id", getOne); //get a blog by id
-router.delete("/deleteblog/:id", deleteBlogById); //delete blog by id
-router.put("/updateblog/:id", updateBlogById); //update blog by id
+router.get("/getblogsbyid/:id", getOne); //get a blog by id
+router.delete("/deleteblogs/:id", deleteBlogById); //delete blog by id
+router.put("/updateblogs/:id", updateBlogById); //update blog by id
 
 //project routes
-router.post("/addproject", addProject); //add a project
+router.post("/addprojects", addProject); //add a project
 router.get("/getprojects", getAllProjects); //get all projects
-router.get("/getbyprojectid/:id", getAllProjectById); //get one project by id
-router.delete("/deleteproject/:id", deleteProjectById); //delete project by id
-router.put("/updateproject/:id", updateProjectById); //update the project by id
+router.get("/getbyprojectsid/:id", getAllProjectById); //get one project by id
+router.delete("/deleteprojects/:id", deleteProjectById); //delete project by id
+router.put("/updateprojects/:id", updateProjectById); //update the project by id
 
 //skills routes
 router.post("/addskills", addSkill); // Add a skill
@@ -78,17 +95,17 @@ router.delete("/deleteskills/:id", deleteSkillById); // Delete skill by id
 router.put("/updateskills/:id", updateSkillById); // Update the skill by id
 
 //experience section
-router.post("/addexperience", addExperience); // Add an experience  //add multer to post images
+router.post("/addexperiences", uploadExperience.single('image'), addExperience); // Add an experience  //add multer to post images
 router.get("/getexperiences", getAllExperiences); // Get all experiences
-router.get("/getexperiencebyid/:id", getExperienceById); // Get one experience by id
-router.delete("/deleteexperience/:id", deleteExperienceById); // Delete experience by id
-router.put("/updateexperience/:id", updateExperienceById); // Update the experience by id
+router.get("/getexperiencesbyid/:id", getExperienceById); // Get one experience by id
+router.delete("/deleteexperiences/:id", deleteExperienceById); // Delete experience by id
+router.put("/updateexperiences/:id", updateExperienceById); // Update the experience by id
 
 //achievement section
-router.post("/addachievement", uploadAchievement.single('image'), addAchievement); // Add an achievement
+router.post("/addachievements", uploadAchievement.single('image'), addAchievement); // Add an achievement
 router.get("/getachievements", getAllAchievements); // Get all achievements
-router.get("/getachievementbyid/:id", getAchievementById); // Get one achievement by id
-router.delete("/deleteachievement/:id", deleteAchievementById); // Delete achievement by id
-router.put("/updateachievement/:id", updateAchievementById); // Update the achievement by id
+router.get("/getachievementsbyid/:id", getAchievementById); // Get one achievement by id
+router.delete("/deleteachievements/:id", deleteAchievementById); // Delete achievement by id
+router.put("/updateachievements/:id", updateAchievementById); // Update the achievement by id
 
 export default router;

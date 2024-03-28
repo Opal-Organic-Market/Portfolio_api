@@ -4,7 +4,10 @@ import { Skill } from "../model/skills.js";
 export const addSkill = async (req, res) => {
   try {
     const data = req.body;
-    const addedSkill = await Skill.create(data);
+    const addedSkill = await Skill.create({
+      ...data,
+    image: req.file.filename
+    });
     console.log("New skill added:", addedSkill);
     res.send(addedSkill);
   } catch (error) {
@@ -12,6 +15,7 @@ export const addSkill = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
 
 // Get all skills
 export const getAllSkills = async (req, res) => {

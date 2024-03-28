@@ -4,18 +4,24 @@ import { blogModel } from "../model/blog.js";
 export const addBlog = async (req, res) => {
   try {
     const data = req.body;
-    const addData = await blogModel.create(data);
-    console.log("new entry", data);
-    res.send(addData);
+    const addedBlog = await Blog.create({
+      ...data,
+      image: req.file.filename
+    });
+    console.log("new entry", addedBlog);
+    res.send(addedBlog);
   } catch (error) {
     console.log(error);
+    res.status(500).json({ message :'internal server error'})
   }
 };
+
+
 
 //get all blogs
 export const getAll = async (req, res) => {
   try {
-    const getAllBlogs = await blogModel.find({});
+    const getAllBlogs = await Blog.find({});
     res.send(getAllBlogs);
   } catch (error) {
     console.log(error);
@@ -26,7 +32,7 @@ export const getAll = async (req, res) => {
 export const getOne = async (req, res) => {
   try {
     const id = req.params.id;
-    const getById = await blogModel.findById(id);
+    const getById = await Blog.findById(id);
     res.send(getById);
   } catch (error) {
     console.log(error);
@@ -37,7 +43,7 @@ export const getOne = async (req, res) => {
 export const deleteBlogById = async (req, res) => {
   try {
     const id = req.params.id;
-    const deletedBlog = await blogModel.findByIdAndDelete(id);
+    const deletedBlog = await Blog.findByIdAndDelete(id);
 
     if (!deletedBlog) {
       return res.status(404).json({ message: "Blog not found" });
@@ -56,7 +62,7 @@ export const updateBlogById = async (req, res) => {
     const id = req.params.id;
     const updates = req.body;
 
-    const updatedBlog = await blogModel.findByIdAndUpdate(id, updates, {
+    const updatedBlog = await Blog.findByIdAndUpdate(id, updates, {
       new: true,
     });
 
