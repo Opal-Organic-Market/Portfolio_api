@@ -25,7 +25,7 @@ app.listen(8080, () => {
         title: "Portfolio API Documentation",
         description: "API Documentation for Portfolio website",
       };
-      spec.host = "portfolio-api-nmrs.onrender.com/";
+      spec.host = "portfolio-api-nmrs.onrender.com";
       spec.schemes = ["http", "https"];
 
       return spec;
@@ -34,13 +34,13 @@ app.listen(8080, () => {
     60 * 1000,
     "api-docs",
     modelNames,
-    ["users", "skills","experiences","achievements","projects"],
+    ["skills","experiences","achievements","projects"],
     ["development"],
     true
   );
 
   console.log(
-    'Server Listening on  8080, Open http://localhost:8080/api-docs/'
+    'Server Listening on  8080'
   );
 });
 
